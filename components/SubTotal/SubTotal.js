@@ -9,7 +9,7 @@ const SubTotal = () => {
 	console.log(basket);
 	const renderPriceList = () => {
 		return basket.map((item, i) => {
-			return <p>{`item ${i + 1}: £${item.price - item.discount}`}</p>;
+			return <p key={i}>{`item ${i + 1}: £${item.price - item.discount}`}</p>;
 		});
 	};
 	return (
