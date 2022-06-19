@@ -8,8 +8,8 @@ const SubTotal = () => {
 	const [{ basket }, _] = useStateValue();
 	console.log(basket);
 	const renderPriceList = () => {
-		return basket.map((item) => {
-			return <p>{`price: £${item.price}`}</p>;
+		return basket.map((item, i) => {
+			return <p>{`item ${i + 1}: £${item.price - item.discount}`}</p>;
 		});
 	};
 	return (
