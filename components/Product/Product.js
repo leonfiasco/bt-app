@@ -2,7 +2,7 @@ import { useStateValue } from '../contextApi/StateProvider';
 
 import styles from './styles.module.scss';
 
-function Product({ id, title, image, price, rating, discount = 0 }) {
+function Product({ id, title, image, price, discount = 0 }) {
 	const [{ basket }, dispatch] = useStateValue();
 	console.log(basket);
 
@@ -15,7 +15,6 @@ function Product({ id, title, image, price, rating, discount = 0 }) {
 				title: title,
 				image: image,
 				price: price,
-				rating: rating,
 				discount: discount,
 			},
 		});
