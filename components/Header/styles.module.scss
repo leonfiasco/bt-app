@@ -2,30 +2,28 @@
 	height: 60px;
 	display: flex;
 	align-items: center;
-	justify-content: end;
+	justify-content: space-between;
 	background-color: #131921;
 	position: sticky;
 	top: 0;
 	z-index: 100;
 }
 
-.headerNav {
+.headerOptionHome {
 	display: flex;
-	justify-content: space-evenly;
+	align-items: center;
+	color: white;
+	cursor: pointer;
+	padding-left: 20px;
 }
 
-.headerOption {
-	display: flex;
-	flex-direction: column;
-	margin-left: 10px;
-	margin-right: 10px;
-	color: #fff;
-}
-
-//  .header_optionLineOne {
-//     display: flex;
-//     font-size: 10px;
-//  }
+// .headerOption {
+// 	display: flex;
+// 	flex-direction: column;
+// 	margin-left: 10px;
+// 	margin-right: 10px;
+// 	color: #fff;
+// }
 
 .headerOptionBasket {
 	display: flex;

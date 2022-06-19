@@ -1,6 +1,6 @@
 import React from 'react';
-// import Subtotal from './Subtotal';
-// import CheckoutProduct from './CheckoutProduct';
+import SubTotal from '../components/SubTotal/SubTotal';
+import CheckoutProduct from '../components/CheckoutProduct/CheckoutProduct';
 import { useStateValue } from '../components/contextApi/StateProvider';
 
 import styles from './checkout/styles.module.scss';
@@ -9,11 +9,20 @@ function Checkout() {
 	const [{ basket, _ }] = useStateValue();
 	return (
 		<div className={styles.checkout}>
-			<h2 className={styles.checkout_title}>Your shopping Basket</h2>
-
-			{/* <div className='checkout_right'>
-				<Subtotal />
-			</div> */}
+			<h2 className={styles.checkoutTitle}>Your shopping Basket</h2>
+			{basket.map((item, i) => (
+				<CheckoutProduct
+					key={i}
+					id={item.id}
+					title={item.title}
+					image={item.image}
+					price={item.price}
+					discount={item.discount}
+				/>
+			))}
+			<div className={styles.checkoutRight}>
+				<SubTotal />
+			</div>
 		</div>
 	);
 }

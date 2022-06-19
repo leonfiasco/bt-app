@@ -3,8 +3,7 @@ import { useStateValue } from '../contextApi/StateProvider';
 import styles from './styles.module.scss';
 
 function Product({ id, title, image, price, discount = 0 }) {
-	const [{ basket }, dispatch] = useStateValue();
-	console.log(basket);
+	const [{ _ }, dispatch] = useStateValue();
 
 	const addToBasket = () => {
 		//dispatching item to the data layer
