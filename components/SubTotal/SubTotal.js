@@ -6,12 +6,18 @@ import styles from './styles.module.scss';
 
 const SubTotal = () => {
 	const [{ basket }, _] = useStateValue();
+	console.log(basket);
+	const renderPriceList = () => {
+		return basket.map((item) => {
+			return <p>{`price: £${item.price}`}</p>;
+		});
+	};
 	return (
 		<div className={styles.subtotal}>
+			<div className={styles.pricesWrap}>{renderPriceList()}</div>
 			<CurrencyFormat
 				renderText={(value) => (
 					<>
-						{console.log(value)}
 						<p>
 							Subtotal ({basket.length} items):
 							<strong>{value}</strong>

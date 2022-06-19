@@ -23,10 +23,18 @@ function Product({ id, title, image, price, discount = 0 }) {
 		<div className={styles.product}>
 			<div className={styles.productInfo} key={id}>
 				<p>{title}</p>
-				<p className={styles.productPrice}>
-					<small>£</small>
-					<strong>{price}</strong>
-				</p>
+				<div className={styles.priceWrap}>
+					<div className={styles.productPrice}>
+						<small>£</small>
+						<strong>{price}</strong>
+					</div>
+					{discount > 0 && (
+						<div className={styles.discountPrice}>
+							<small>£</small>
+							<small>{discount}</small> off
+						</div>
+					)}
+				</div>
 			</div>
 			<img src={image} alt='' />
 			<button onClick={addToBasket}>Add to Basket</button>

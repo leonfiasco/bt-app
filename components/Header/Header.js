@@ -25,7 +25,6 @@ const Header = () => {
 				</a>
 			</Link>
 		</div>
-		// </div>
 	);
 };
 

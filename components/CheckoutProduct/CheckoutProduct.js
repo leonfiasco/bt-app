@@ -3,7 +3,7 @@ import { useStateValue } from '../contextApi/StateProvider';
 
 import styles from './styles.module.scss';
 
-function CheckoutProduct({ id, image, title, price, hideButton }) {
+function CheckoutProduct({ id, image, title, price, hideButton, discount }) {
 	const [{ _ }, dispatch] = useStateValue();
 
 	const removeFromBasket = () => {
@@ -20,7 +20,14 @@ function CheckoutProduct({ id, image, title, price, hideButton }) {
 				<p className={styles.checkoutProductTitle}>{title}</p>
 				<p className={styles.checkoutProductPrice}>
 					<small>£</small>
-					<strong>{price}</strong>
+					{discount ? (
+						<span className={styles.discountPrice}>
+							<del>{price}</del>
+							<strong>{price - discount}</strong>
+						</span>
+					) : (
+						<strong>{price}</strong>
+					)}
 				</p>
 				{!hideButton && (
 					<button onClick={removeFromBasket}>Remove from Basket</button>
