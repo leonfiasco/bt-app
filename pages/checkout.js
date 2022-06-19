@@ -6,7 +6,7 @@ import styles from './checkout/styles.module.scss';
 
 function Checkout() {
 	const [{ basket, _ }] = useStateValue();
-	console.log(basket);
+
 	return (
 		<div className={styles.checkout}>
 			<div className={styles.checkoutProductWrap}>

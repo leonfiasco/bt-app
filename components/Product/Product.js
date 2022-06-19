@@ -20,24 +20,33 @@ function Product({ id, title, image, price, discount = 0 }) {
 	};
 
 	return (
-		<div className={styles.product}>
-			<div className={styles.productInfo} key={id}>
-				<p>{title}</p>
-				<div className={styles.priceWrap}>
-					<div className={styles.productPrice}>
-						<small>£</small>
-						<strong>{price}</strong>
-					</div>
-					{discount > 0 && (
-						<div className={styles.discountPrice}>
+		<div
+			className={styles.product}
+			data-count={discount > 0 ? `£${discount} off` : null}
+		>
+			<div className={styles.productWrap}>
+				<div className={styles.productInfo}>
+					<p>{title}</p>
+					<div className={styles.priceWrap}>
+						<p className={styles.productPrice}>
 							<small>£</small>
-							<small>{discount}</small> off
-						</div>
-					)}
+							{discount ? (
+								<span className={styles.discountPrice}>
+									<del>{price}</del>
+									<small>£</small>
+									<strong>{price - discount}</strong>
+								</span>
+							) : (
+								<strong>{price}</strong>
+							)}
+						</p>
+					</div>
+				</div>
+				<img src={image} alt='' />
+				<div className={styles.btnWrap}>
+					<button onClick={addToBasket}>Add to Basket</button>
 				</div>
 			</div>
-			<img src={image} alt='' />
-			<button onClick={addToBasket}>Add to Basket</button>
 		</div>
 	);
 }
