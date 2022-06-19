@@ -1,0 +1,44 @@
+.header {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	background-color: #131921;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.headerNav {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.headerOption {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #fff;
+}
+
+//  .header_optionLineOne {
+//     display: flex;
+//     font-size: 10px;
+//  }
+
+.headerOptionBasket {
+	display: flex;
+	align-items: center;
+	color: white;
+	cursor: pointer;
+	padding-right: 20px;
+	.headerOptionLineTwo {
+		font-size: 13px;
+		font-weight: 800;
+		&.headerBasketCount {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+}
